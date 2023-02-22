@@ -1,0 +1,16 @@
+{% block content %}
+  <h1>Add Playlist</h1>
+  <form method="POST" action="{{ url_for('add_playlist') }}">
+    {{ form.hidden_tag() }}
+    <div>
+      {{ form.name.label }} {{ form.name() }}
+    </div>
+    <div>
+      {{ form.description.label }} {{ form.description() }}
+    </div>
+    <div>
+      {{ form.songs.label }} {{ form.songs() }}
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}
