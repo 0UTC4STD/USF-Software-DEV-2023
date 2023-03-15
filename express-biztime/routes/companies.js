@@ -2,7 +2,7 @@ const express = require("express");
 const ExpressError = require("../expressError")
 const db = require("../db");
 const router = new express.Router();
-
+const slugify = require("slugify");
 
 // GET /companies
 // Returns list of companies, like {companies: [{code, name}, ...]}
@@ -42,7 +42,8 @@ router.get('/', async function (req, res, next) {
 
   router.post('/', async function (req, res, next) {
     try {
-      const { code, name, description } = req.body;
+      const {name, description } = req.body;
+      let code = slugify(name, {lower: true});
       const result = await db.query(
         'INSERT INTO companies (code, name, description) VALUES ($1, $2, $3) RETURNING code, name, description',
         [code, name, description]
