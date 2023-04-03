@@ -1,12 +1,9 @@
-import React from 'react';
-import MagicEightBall from './MagicEightBall';
-import './App.css';
+import React from "react";
+import CardTable from "./CardTable";
 
 function App() {
   return (
-    <div className="App">
-      <MagicEightBall />
-    </div>
+    <CardTable />
   );
 }
 
