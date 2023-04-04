@@ -1,6 +1,6 @@
 import { render, fireEvent } from "@testing-library/react";
-import Carousel from "./Carousel";
-import TEST_IMAGES from "./_testCommon.js";
+import Carousel from "../../react-state-carousel-coins/carousel/src/Carousel";
+import TEST_IMAGES from "../../react-state-carousel-coins/carousel/src/_testCommon.js";
 
 it("works when you click on the right arrow", function() {
   const { container } = render(
